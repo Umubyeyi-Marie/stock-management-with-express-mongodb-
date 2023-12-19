@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const stockSchema = new mongoose.Schema({
     name:{ required:true, type:string},
     type:{required:true, type:string},
@@ -7,6 +8,8 @@ const stockSchema = new mongoose.Schema({
     price:{required:true, type:string},
     totalPrice:{required:true, type:string},
     quality:{
+        type:string,
+        required:true,
        enum:{
         type:["firstQuality","middleQuality", "lastQuality"],
         message:"{value} is not a quality",
